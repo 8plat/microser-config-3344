@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 9090
+spring:
+  profiles: dev
+  application:
+    name: microser-config-dept-dev-port-9090
+eureka:
+  client:
+    service-url:
+    defaultZone: http://eureka7000.com:7000/eureka/
+---
+server:
+  port: 9091
+spring:
+  profiles: test
+  application:
+    name: microser-config-dept-test-port-9091
+eureka:
+  client:
+    service-url:
+    defaultZone: http://eureka7000.com:7000/eureka/
