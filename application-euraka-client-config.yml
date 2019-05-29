@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 7000
+spring:
+  application:
+    name: microser-config-eureka-client
+  profiles: dev
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7000.com:7000/eureka
+    fetch-registry: false
+  instance:
+    prefer-ip-address: true
+    hostname: eureka7000.com
+
+---
+server:
+  port: 7001
+spring:
+  application:
+    name: microser-config-eureka-client
+  profiles: test
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+    fetch-registry: false
+  instance:
+    prefer-ip-address: true
+    hostname: eureka7001.com
